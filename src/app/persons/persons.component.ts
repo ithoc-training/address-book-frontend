@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Person} from "./person";
-import {PERSONS} from "./persons-mock";
+import {PersonService} from "../person.service";
+import {MessageService} from "../message.service";
 
 @Component({
   selector: 'app-persons',
@@ -9,12 +10,23 @@ import {PERSONS} from "./persons-mock";
 })
 export class PersonsComponent {
 
-  persons: Person[] = PERSONS; // => Replace by service
+  persons: Person[] = [];
   selectedPerson?: Person;
 
+  constructor(private personService: PersonService, private messageService: MessageService) {
+  }
+
+  ngOnInit(): void {
+    this.getPersons();
+  }
 
   onSelect(person: Person): void {
     this.selectedPerson = person;
+    this.messageService.add(`PersonsComponent: Selected person id=${this.selectedPerson.id}`);
+  }
+
+  getPersons(): void {
+    this.personService.readPersons().subscribe(persons => this.persons = persons);
   }
 
 }
