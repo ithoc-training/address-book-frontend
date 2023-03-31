@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Person} from "./person";
+import {PERSONS} from "./persons-mock";
 
 @Component({
   selector: 'app-persons',
@@ -8,9 +9,12 @@ import {Person} from "./person";
 })
 export class PersonsComponent {
 
-  person: Person = {
-    id: 1,
-    name: 'Oli Hock'
-  };
+  persons: Person[] = PERSONS;
+  selectedPerson?: Person;
+
+
+  onSelect(person: Person): void {
+    this.selectedPerson = person;
+  }
 
 }
