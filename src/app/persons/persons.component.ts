@@ -9,7 +9,7 @@ import {PERSONS} from "./persons-mock";
 })
 export class PersonsComponent {
 
-  persons: Person[] = PERSONS;
+  persons: Person[] = PERSONS; // => Replace by service
   selectedPerson?: Person;
 
 
