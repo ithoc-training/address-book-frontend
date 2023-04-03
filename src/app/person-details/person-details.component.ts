@@ -29,6 +29,13 @@ export class PersonDetailsComponent {
     this.personService.readPerson(id).subscribe(person => this.person = person);
   }
 
+  savePerson(): void {
+    if (this.person) {
+      this.personService.updatePerson(this.person)
+        .subscribe(() => this.back());
+    }
+  }
+
   back(): void {
     this.location.back();
   }

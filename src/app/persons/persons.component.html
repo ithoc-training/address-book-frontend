@@ -1,8 +1,29 @@
 <h2>Persons</h2>
+
+<div>
+  <tr>
+    <td>
+      <label for="first-name">First Name: </label>
+      <input id="first-name" #firstName/>
+    </td>
+    <td>&nbsp;</td>
+    <td>
+      <label for="last-name">Last Name: </label>
+      <input id="last-name" #lastName/>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <button id="add-button" type="button" class="add-button"
+          (click)="addPerson(firstName.value, lastName.value); firstName.value=''; lastName.value=''">
+    Add
+  </button>
+</div>
+
 <ul class="persons">
   <li *ngFor="let person of persons">
     <a routerLink="/person-details/{{person.id}}">
       <span class="badge">{{person.id}}</span> {{person.firstName}} {{person.lastName}}
     </a>
+    <button type="button" class="delete" title="Delete" (click)="deletePerson(person)">x</button>
   </li>
 </ul>

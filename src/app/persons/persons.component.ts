@@ -24,4 +24,18 @@ export class PersonsComponent {
     this.personService.readPersons().subscribe(persons => this.persons = persons);
   }
 
+  addPerson(firstName: string, lastName: string): void {
+    firstName = firstName.trim();
+    lastName = lastName.trim();
+    if (!firstName || !lastName) { return; }
+
+    const person = { firstName, lastName } as Person
+    this.personService.createPerson(person).subscribe(() => this.getPersons());
+  }
+
+  deletePerson(person: Person): void {
+    this.personService.deletePerson(person).subscribe(() => this.getPersons());
+    this.messageService.add(`PersonService: Deleted person ${person.id}`)
+  }
+
 }
