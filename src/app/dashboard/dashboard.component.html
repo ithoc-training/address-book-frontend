@@ -1,6 +1,6 @@
 <h2>Dashboard</h2>
 <div class="persons-menu">
   <a *ngFor="let person of persons" routerLink="/person-details/{{person.id}}">
-    {{person.name}}
+    {{person.firstName}} {{person.lastName}}
   </a>
 </div>

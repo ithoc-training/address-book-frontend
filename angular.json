@@ -63,6 +63,7 @@
               "browserTarget": "address-book:build:production"
             },
             "development": {
+              "proxyConfig": "src/proxy-config.json",
               "browserTarget": "address-book:build:development"
             }
           },
