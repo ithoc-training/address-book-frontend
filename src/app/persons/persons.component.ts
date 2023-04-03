@@ -10,19 +10,14 @@ import {MessageService} from "../message.service";
 })
 export class PersonsComponent {
 
-  persons: Person[] = [];
-  selectedPerson?: Person;
+  persons: Person[];
 
   constructor(private personService: PersonService, private messageService: MessageService) {
+    this.persons = [];
   }
 
   ngOnInit(): void {
     this.getPersons();
-  }
-
-  onSelect(person: Person): void {
-    this.selectedPerson = person;
-    this.messageService.add(`PersonsComponent: Selected person id=${this.selectedPerson.id}`);
   }
 
   getPersons(): void {
