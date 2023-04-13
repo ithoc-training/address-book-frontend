@@ -7,6 +7,5 @@ RUN npm run build --omit=dev
 
 # Layer 2
 FROM nginx:alpine
-COPY nginx.proxy.prod.conf /etc/nginx/conf.d/default.conf
 COPY --from=node /app/dist/address-book-frontend /usr/share/nginx/html
 
