@@ -9,7 +9,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class PersonService {
 
-  url: string = '/api/persons';
+  url: string = 'http://localhost:7080/api/persons';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

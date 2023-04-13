@@ -1,6 +1,0 @@
-{
-  "/api": {
-    "target": "http://ab-backend:7080",
-    "secure": false
-  }
-}
