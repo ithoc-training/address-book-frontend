@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "address-book": {
+    "address-book-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/address-book",
+            "outputPath": "dist/address-book-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,11 +60,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "address-book:build:production"
+              "browserTarget": "address-book-frontend:build:production"
             },
             "development": {
               "proxyConfig": "src/proxy-config.json",
-              "browserTarget": "address-book:build:development"
+              "browserTarget": "address-book-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "address-book:build"
+            "browserTarget": "address-book-frontend:build"
           }
         },
         "test": {
