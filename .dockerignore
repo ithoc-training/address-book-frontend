@@ -1,0 +1,6 @@
+.angular
+.idea
+node_modules
+.editorconfig
+.gitignore
+README.md
