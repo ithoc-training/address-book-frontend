@@ -3,13 +3,14 @@ import {Person} from "./persons/person";
 import {Observable} from "rxjs";
 import {MessageService} from "./message.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../environment/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
 
-  url: string = 'http://localhost:7080/api/persons';
+  url: string = environment.apiUrl + '/persons';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
