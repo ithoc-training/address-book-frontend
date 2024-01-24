@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {Person} from "../persons/person";
 import {ActivatedRoute} from "@angular/router";
 import {PersonService} from "../person.service";
@@ -25,7 +25,7 @@ export class PersonDetailsComponent {
   }
 
   getPerson(): void {
-    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    const id = String(this.activatedRoute.snapshot.paramMap.get('id'));
     this.personService.readPerson(id).subscribe(person => this.person = person);
   }
 

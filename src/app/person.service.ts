@@ -25,7 +25,7 @@ export class PersonService {
     return persons;
   }
 
-  readPerson(id: number): Observable<Person> {
+  readPerson(id: string): Observable<Person> {
     const person: Observable<Person> = this.httpClient.get<Person>(this.url + '/' + id);
     this.messageService.add(`PersonService: Fetched person for ID ${id}`);
 
